@@ -4,6 +4,7 @@ import Sidebar from './../Sidebar/index';
 import Header from '../Header';
 import styles from './style.module.scss';
 import useToggleClass from '../../hooks/useToggleClass';
+import SubHeader from 'src/components/SubHeader';
 
 Layout.propTypes = {
   children: PropTypes.element.isRequired
@@ -26,7 +27,10 @@ function Layout(props) {
           setIsOpenSidebar={setIsOpenSidebar}
         />
 
-        <div>{props.children}</div>
+        <div>
+          <SubHeader />
+          {props.children}
+        </div>
       </div>
     </div>
   );

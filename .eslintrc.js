@@ -21,8 +21,24 @@ module.exports = {
     //   }
     // ]
     semi: 0,
-    'space-before-function-paren': ['error', 'never']
-
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'ignore',
+        named: 'ignore',
+        asyncArrow: 'ignore'
+      }
+    ],
+    'no-unused-vars': [
+      'error',
+      {
+        vars: 'local',
+        args: 'after-used',
+        ignoreRestSiblings: false,
+        varsIgnorePattern: '_'
+      }
+    ]
+    // 'space-before-function-paren': ['error', 'never']
     // "eol-last": 0,
     // "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
     // "quotes": [2, "single", { "avoidEscape": true }]

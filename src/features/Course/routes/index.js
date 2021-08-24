@@ -9,6 +9,10 @@ const routesCourse = [
   {
     path: '/courses/create',
     component: React.lazy(() => import('../pages/create'))
+  },
+  {
+    path: '/courses/:id',
+    component: React.lazy(() => import('../pages/show'))
   }
 ];
 
