@@ -1,10 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './style.module.scss';
 import useToggleClass from './../../hooks/useToggleClass';
 import { GiHamburgerMenu } from 'react-icons/all';
-import { LinearProgress } from '@material-ui/core';
-import AppContext from 'src/context';
 
 Header.propTypes = {
   isOpenSidebar: PropTypes.bool,
@@ -17,8 +15,6 @@ function Header({ isOpenSidebar, setIsOpenSidebar }) {
   const { classToggle } = useToggleClass(styles.toggle, isOpenSidebar, [
     styles.active
   ]);
-
-  const { appState } = useContext(AppContext);
 
   return (
     <div>
@@ -41,10 +37,10 @@ function Header({ isOpenSidebar, setIsOpenSidebar }) {
         </div>
       </div>
 
-      <LinearProgress
+      {/* <LinearProgress
         className={`mt-0.5  ${!appState?.isLoading ? 'invisible ' : 'visible'}`}
         color={'success'}
-      />
+      /> */}
     </div>
   );
 }
